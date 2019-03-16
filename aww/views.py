@@ -18,6 +18,22 @@ def convert_dates(dates):
 
 def project(request, id):
     date = dt.date.today
+    project = []
     projects = Project.objects.get(id=id)
-    return render(request, {"date": date, "projects": projects})
+    print(project)
+    return render(request,  'project.html', {"date": date, "projects": projects})
+
+
+def search_results(request):
+
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_project = Project.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"projects": searched_projects})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
     
