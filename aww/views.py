@@ -16,7 +16,8 @@ def convert_dates(dates):
     day = days[day_number]
     return day
 
-def project(request):
+def project(request, id):
     date = dt.date.today
-    return render(request, {"date": date})
+    projects = Project.objects.get(id=id)
+    return render(request, {"date": date, "projects": projects})
     
