@@ -1,5 +1,9 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>Welcome to Awwards App  and feel free to interact with it.</h1>
+
+{% for projects in project_image %}
+<img src="{{projects.project_image.url}}" class="img-responsive" alt="Image">
+
+{% endfor %}
 {% endblock %}
