@@ -8,6 +8,6 @@ urlpatterns=[
     url(r'^profile/', views.profile,name='profile'),
     url(r'^search/', views.search_results, name='search_results'),
     url(r'^project/$', views.new_project, name='new-project'),
-
+    url(r'^rate/$', views.rate, name='rate'),
 ]
 
