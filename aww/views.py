@@ -10,12 +10,14 @@ from .models import *
 def index(request):
     date = dt.date.today
     projects = Project.objects.all()
-    return render(request, 'index.html', {"date": date,'projects':projects})
+    profiles = Profile.objects.all()
+    rates = Rate.objects.all()
+    return render(request, 'index.html', {"date": date,"projects":projects, "rates": rates})
 
 def profile(request):
     date = dt.date.today
     profile = []
-    profiles = Profile.objects.get(first_name=request.user.username)
+    profiles = Profile.objects.all()
 
     return render(request, 'profile.html', {"date": date, "profiles": profile})
 
@@ -104,4 +106,9 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+def rate(request):
+    rate = []
+    rates = Rate.objects.all()
+    return render(request, 'rate.html', {"rates": rates})
     
