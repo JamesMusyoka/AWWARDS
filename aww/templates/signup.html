@@ -1,19 +1,47 @@
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-      {% for field in form %}
-      <p>
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
+<div  class="container">
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="col-sm-6">
+              <img src="https://cdn.slant.co/fe9f06a6-40c3-4c48-a265-6582b229b274/-/format/jpeg/-/progressive/yes/-/preview/480x480/" class="awwwards">
+          </div>
+          <h2>Sign up</h2>
+        </div>
+        <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+          {{ field.label_tag }}<br>
+          {{ field }}
+          {% if field.help_text %}
           <small style="display: none">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
+          {% endif %}
+          {% for error in field.errors %}
           <p style="color: red">{{ error }}</p>
+          {% endfor %}
+        </p>
         {% endfor %}
-      </p>
-      {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
+        <button type="submit">Sign up</button>
+        </form>
+      </div>
+  </div>
 {% endblock %}
+<style>
+.container{
+    margin-bottom: 10px;
+    position: bottom;
+    padding-top: 70px;
+}
+.awwwards{
+    padding-top: 70px;
+    height: 650px;
+    float: left;
+    margin: 10px;
+}
+body{
+    background-color: #9a9a9a!important;
+}
+.col-sm-6{
+  padding-bottom: 55px; 
+}
+</style>
