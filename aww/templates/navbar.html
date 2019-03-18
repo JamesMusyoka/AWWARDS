@@ -1,13 +1,82 @@
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      margin: 0;
+      color: lightgrey;
+    }
+    h1 {
+      font-size: 25px;
+      text-align: center;
+      color: grey;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .topnav a {
+      /* float: left; */
+      color: #f2f2f2;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .topnav a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 50px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+    }
+    .fa:hover {
+      opacity: 0.7;
+    }
+    .fa-instagram,
+    .fa-twitter,
+    .fa-facebook {
+      color: lightgrey;
+    }
+    .social {
+      float: right;
+      padding-right: 20px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    .navbar-form {
+      text-align: right;
+    }
+  </style>
+</head>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">AWWARDS</a>
-    </div>
+<body>
+
+  <!-- nav1 -->
+  <div class="topnav">
+
+    <!-- menu icon -->
+    <span style="font-size:30px;cursor:pointer;color:lightgrey" onclick="openNav()">&#9776;</span>
+
+    <a class="fa fa-user-o" href="{% url 'profile'%}"></a>
+
+    <div class="social">
+      <a href="https://www.instagram.com/awwwards/" class="fa fa-instagram"></a>
+      <a href="https://twitter.com/awwwards" class="fa fa-twitter"></a>
+      <a href="https://web.facebook.com/awwwards/?_rdc=1&_rdr" class="fa fa-facebook"></a>
+    </div><br>
 
     <div class="col-sm-4 col-md-4 navbar-right">
 
@@ -19,9 +88,15 @@
                   <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
               </div>
-    
+              
             </form>
-          </div>
-    </div>
-</nav> 
-    
+    </div>  
+
+
+    <a href="/accounts/login">REGISTER/LOGIN</a>
+
+  </div>
+
+  </div>
+
+</body>
