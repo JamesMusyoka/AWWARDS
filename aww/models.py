@@ -34,16 +34,22 @@ class Project(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', default=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length =30)
     last_name = models.CharField(max_length =30)
-    profile_pic = models.ImageField(upload_to='profile/', default=True)
-    bio = models.CharField(max_length=200, default=True)
+    profile_pic = models.ImageField(upload_to='profile/', default='image')
+    bio = models.CharField(max_length=200, default='')
     email = models.EmailField()
     phone_number = models.CharField(max_length = 10,blank =True)
 
     def save_profile(self):
         self.save
+
+    @classmethod
+    def Profile(cls):
+        today = dt.date.today()
+        aww = cls.objects.filter(title)
+        return aww
 
 class Rate(models.Model):
     rate = models.CharField(max_length=144)
