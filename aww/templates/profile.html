@@ -6,9 +6,11 @@
 <div class="container">
     {% for profile in profiles %}
     <div class="row">
-        <img src="{{profile.profile_pic.url}}" class="img-responsive" alt="profile">
+        <img src="{{profile.profile_pic.url}}" class="img-responsive" alt="profile_pic">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <h2 class="text-center"> {{ profile_item.title }} </h2>
+                <h2 class="text-center"> {{ profile.first_name }} </h2>
+                <p>Bio: {{profile.bio}} </p>
+                <p>{{profile.email}}</p>
             </div>
 
     </div>
