@@ -1,10 +1,12 @@
 {% extends 'base.html'%}
 {% load bootstrap4 %}
 {% block content %}
+<link rel="stylesheet" href="../static/css/aww.css">
+<body>
 <div class="container">
     {% for project in projects%}
     <div class="row">
-      <img src="{{project.project_image.url}}"  class="img-responsive" alt="" height='200px' width="200px">
+      <img src="{{project.project_image.url}}"  class="img-responsive" alt="" height='350px' width="350px">
     </div>
   
     <div class="row">
@@ -21,7 +23,58 @@
     <div class="row">
       <p>Posted {{project.pub_date|timesince}} by {{project.profile.first_name}}</p>
     </div>
+
+    <div class="card-title">
+     <p class="description">
+       {{project.description }}
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <a> {{ project.link }} </a>
+    <hr>
+</div>
     {%endfor%}
   
   </div>
+
+
+  <div class="part3" style="background-color:blueviolet;">
+      <h2>NOMINEES</h2>
+      <p>Click to submit your project.</p>
+      <button type="button" class="btn">
+          <a href="{%url 'new-project'%}">Submit</a>
+      </button>
+
+  </div>
+
+  <div class="part4" style="background-color:lightgrey;">
+      <h2>SUBSCRIBE</h2>
+      <div class="container-fluid">
+          <form action="{% url 'index' %}" method="post">
+              {%csrf_token%}
+
+              <input type="submit" value="Subscribe">
+          </form>
+      </div>
+  </div>
+
+  <div class="part5" style="background-color:lightgrey;">
+      <h2>CONTACT INFO</h2>
+      To get in touch with me:
+      <address>
+          James M  Mary
+          P.O. Box 1087,
+          Kitui
+
+          Tel. +257 74 100 224
+          <a href="jamesmu475@gmail.com">Email: jamesmu475@gmail.com</a>
+
+      </address>
+
+  </div>
+</div>
+
 {% endblock %}
+</body>
+
