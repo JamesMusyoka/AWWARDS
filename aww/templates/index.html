@@ -1,9 +1,27 @@
 {% extends 'base.html'%}
-
+{% load bootstrap4 %}
 {% block content %}
-
-{% for projects in project_image %}
-<img src="{{projects.project_image.url}}" class="img-responsive" alt="Image">
-
-{% endfor %}
+<div class="container">
+    {% for project in projects%}
+    <div class="row">
+      <img src="{{project.project_image.url}}"  class="img-responsive" alt="" height='200px' width="200px">
+    </div>
+  
+    <div class="row">
+      <h1 class="text-center">{{project.title}}</h1>
+    </div>
+  
+    <div class="row">
+      {% autoescape on %}
+      {{project.post| safe}}
+     {% endautoescape %}
+  
+    </div>
+  
+    <div class="row">
+      <p>Posted {{project.pub_date|timesince}} by {{project.profile.first_name}}</p>
+    </div>
+    {%endfor%}
+  
+  </div>
 {% endblock %}
