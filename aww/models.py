@@ -1,10 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
+from tinymce.models import HTMLField
 
 class Project(models.Model):
     title = models.CharField(max_length=25)
     link = models.CharField(max_length=50, null=True)
+    description = HTMLField()
     project_image = models.ImageField(upload_to='project/')
     pub_date = models.DateTimeField(auto_now_add=True)
 
@@ -53,4 +55,8 @@ class Rate(models.Model):
 
     def delete_rate(self):
         self.delete()
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
 
