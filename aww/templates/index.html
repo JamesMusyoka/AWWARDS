@@ -11,7 +11,7 @@
       </div>
 
     <div class="row">
-      <img src="{{project.project_image.url}}"  class="img-responsive" alt="" height='750px' width="750px">
+      <img src="{{project.project_image.url}}"  class="img-responsive" alt="" height='700px' width="700px">
     </div>
   
     <div class="row">
@@ -25,17 +25,16 @@
       <p>Posted {{project.pub_date|timesince}} by {{project.profile.first_name}}</p>
     </div>
 
-    <div class="card-title">
      <p class="description">
        {{project.description }}
     </p>
-  </div>
-
-  <div class="card-footer">
     <a> {{ project.link }} </a>
-    <hr>
-</div>
+  
     {%endfor%}
+
+    {% for rates in rate_project %}
+    <img src="{{rates.rate_project.url}}" alt="rate">
+    {% endfor %}
   
   </div>
 
