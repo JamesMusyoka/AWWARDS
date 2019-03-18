@@ -17,7 +17,7 @@ def index(request):
 def profile(request):
     date = dt.date.today
     profile = []
-    profiles = Profile.objects.all()
+    profiles = Profile.objects.filter(user=request.user)
 
     return render(request, 'profile.html', {"date": date, "profiles": profile})
 
