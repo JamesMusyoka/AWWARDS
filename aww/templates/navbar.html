@@ -70,7 +70,7 @@
     <!-- menu icon -->
     <span style="font-size:30px;cursor:pointer;color:lightgrey" onclick="openNav()">&#9776;</span>
 
-    <a class="fa fa-user-o" href="{% url 'profile'%}"></a>
+    <a class="fa fa-user-o" href="{% url 'profile'%}">{{request.user}}</a>
 
     <div class="social">
       <a href="https://www.instagram.com/awwwards/" class="fa fa-instagram"></a>
