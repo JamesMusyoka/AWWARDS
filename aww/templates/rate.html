@@ -1,0 +1,19 @@
+<div class="container">
+        {% for rates in rate_project%}
+        <div class="row">
+          <img src="{{rates.project.url}}"  class="img-responsive" alt="" height='200px' width="200px">
+        </div>
+      
+        <div class="row">
+          <h1 class="text-center">{{rate.project}}</h1>
+        </div>
+      
+        <div class="row">
+          {% autoescape on %}
+          {{rate.post| safe}}
+         {% endautoescape %}
+      
+        </div>
+        {%endfor%}
+      
+      </div>
