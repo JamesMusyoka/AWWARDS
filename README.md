@@ -14,7 +14,7 @@ This is a Awwward application that displays my photos for others to see and give
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. Here's a link to the deployed site on Heroku - https://awwwarders.herokuapp.com/
 
-- go to my repo on github and clone it - https://jamespersonalg.herokuapp.com/
+- go to my repo on github and clone it -  https://awwwarders.herokuapp.com/
 - create a folder on your computer, create and activate a virtual environment
 - download django and install all the necessary requirements to be able to run the app
 - finally do a ./manage.py runserver to be able to run it on your browser
