@@ -1,4 +1,4 @@
-# PERSONAL GALLERY
+# AWWARDS IP
 
 <img src="/gallery/static/images/AWWWARDS.png">
 
