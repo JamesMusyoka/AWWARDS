@@ -1,5 +1,7 @@
 # PERSONAL GALLERY
 
+<img src="/gallery/static/images/AWWWARDS.png">
+
 This is a Awwward application that displays my photos for others to see and gives a brief description of each image.
 
 #### A user of the application will be able to:
